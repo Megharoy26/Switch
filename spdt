@@ -1,0 +1,36 @@
+#include<avr/io.h>
+#include<util/delay.h>
+int main()
+{
+DDRC = 0XFF;
+DDRD = 0XF0;
+while(1)
+{
+
+if(PIND == 0X0E)
+{
+PORTC = 0X01;
+_delay_ms(1000);
+}
+else if(PIND == 0X0D)
+{
+PORTC = 0X02;
+_delay_ms(1000);
+}
+else if(PIND == 0X0B)
+{
+PORTC = 0X04;
+_delay_ms(1000);
+}
+else if(PIND == 0X07)
+{
+PORTC = 0X08;
+_delay_ms(1000);
+}
+else
+{
+PORTC = 0X00;
+}
+}
+}
+
